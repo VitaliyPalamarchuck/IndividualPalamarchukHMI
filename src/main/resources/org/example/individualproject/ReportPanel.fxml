@@ -9,9 +9,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="578.0"
-            xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.ReportPanelController">
    <top>
       <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" text="Звіт транзакцій" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
@@ -45,7 +43,7 @@
    <bottom>
       <AnchorPane prefHeight="30.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Нажміть щоб згорнути" textAlignment="CENTER" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="214.0" />
+            <Button fx:id="closeReportWindow" alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="1.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="150.0" text="Нажміть щоб згорнути" textAlignment="CENTER" AnchorPane.leftAnchor="214.0" AnchorPane.rightAnchor="214.0" />
          </children>
          <BorderPane.margin>
             <Insets bottom="5.0" top="5.0" />

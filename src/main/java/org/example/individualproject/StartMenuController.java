@@ -31,7 +31,7 @@ public class StartMenuController {
     }
 
     public void goMainMenuAction1(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setContentText("Дана програма знаходиться в розробці і далеко не весь функціонал працює.\nБажаєте продовжити?");
         alert.setTitle("Попередження");
         alert.setHeaderText("Увага!");

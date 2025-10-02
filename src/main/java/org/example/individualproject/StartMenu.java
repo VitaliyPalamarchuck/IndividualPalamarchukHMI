@@ -14,6 +14,7 @@ public class StartMenu extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setMinHeight(350);
         stage.setMinWidth(550);
+        stage.setResizable(false);
         stage.setTitle("Finance Application");
         stage.setScene(scene);
         stage.show();

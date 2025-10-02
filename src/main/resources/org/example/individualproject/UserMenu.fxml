@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.UserMenuController">
+<HBox maxHeight="500.0" maxWidth="900.0" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.UserMenuController">
     <children>
         <VBox maxWidth="300.0" minWidth="220.0" prefHeight="240.0" prefWidth="220.0" spacing="10.0" HBox.hgrow="ALWAYS">
          <children>
@@ -18,8 +18,8 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addTransaction" alignment="CENTER" layoutX="41.0" layoutY="66.0" mnemonicParsing="false" prefWidth="140.0" text="Додати транзакцію" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
-                  <Button fx:id="reportCreateButton" alignment="CENTER" layoutX="41.0" layoutY="100.0" mnemonicParsing="false" onAction="#createReport" prefWidth="140.0" text="Сформувати звіт" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+                  <Button fx:id="addTransaction" alignment="CENTER" layoutX="41.0" layoutY="66.0" mnemonicParsing="false" onAction="#openTransactionAndReportWindow" prefWidth="140.0" text="Додати транзакцію" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
+                  <Button fx:id="reportCreateButton" alignment="CENTER" layoutX="41.0" layoutY="100.0" mnemonicParsing="false" onAction="#openReportWindow" prefWidth="140.0" text="Сформувати звіт" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
                   <Button fx:id="setLimitButton" alignment="CENTER" layoutX="40.0" layoutY="133.0" mnemonicParsing="false" onAction="#setLimit" prefWidth="140.0" text="Встановити ліміт" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
                   <Button fx:id="backToMainMenu" alignment="CENTER" layoutX="40.0" layoutY="168.0" mnemonicParsing="false" onAction="#backToMainMenu" prefWidth="140.0" text="Назад в головне меню" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" />
                </children>
@@ -27,7 +27,7 @@
             <AnchorPane fx:id="contentPaneUser" minHeight="250.0" minWidth="220.0" prefHeight="250.0" prefWidth="220.0" />
          </children>
         </VBox>
-        <AnchorPane minWidth="500.0" prefHeight="500.0" prefWidth="686.0" HBox.hgrow="ALWAYS">
+        <AnchorPane fx:id="ReportAndTransactionPane" minWidth="500.0" prefHeight="500.0" prefWidth="686.0" HBox.hgrow="ALWAYS">
 
         </AnchorPane>
     </children>
