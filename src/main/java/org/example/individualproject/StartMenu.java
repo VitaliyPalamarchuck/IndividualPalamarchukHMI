@@ -15,9 +15,8 @@ public class StartMenu extends Application {
         stage.setMinHeight(350);
         stage.setMinWidth(550);
         stage.setResizable(false);
-        String cssPath = "styles/startmenu.css";
-
-        scene.getStylesheets().add(cssPath);
+        String cssResource = getClass().getResource("/styles/startmenu.css").toExternalForm();
+        scene.getStylesheets().add(cssResource);
 
         stage.setTitle("Finance Application");
         stage.setScene(scene);
