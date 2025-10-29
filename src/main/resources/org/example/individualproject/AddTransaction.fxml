@@ -9,21 +9,27 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.AddTransactionController">
+<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0"
+            prefHeight="400.0" prefWidth="600.0" id="transaction-container"
+            xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.individualproject.AddTransactionController">
    <top>
-      <Label alignment="CENTER" prefHeight="48.0" prefWidth="600.0" text="Додати транзакцію" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label id="transaction-title" alignment="CENTER" prefHeight="48.0" prefWidth="600.0"
+             text="Додати транзакцію" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
    </top>
    <left>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane id="left-panel" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="50.0" left="20.0" right="20.0" top="50.0" />
          </BorderPane.margin>
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" text="Введіть ціль транзакції" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <Label id="transaction-goal-label" alignment="CENTER" contentDisplay="CENTER"
+                   text="Введіть ціль транзакції" textAlignment="CENTER"
+                   AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
                <font>
                   <Font name="System Bold Italic" size="15.0" />
                </font>
@@ -31,12 +37,15 @@
                   <Insets bottom="5.0" top="5.0" />
                </padding>
             </Label>
-            <TextField alignment="TOP_LEFT" layoutX="8.0" layoutY="31.0" prefHeight="207.0" prefWidth="190.0" promptText="Почніть вводити текст..." AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+            <TextField id="transaction-goal-input" fx:id="transactionGoalField" alignment="TOP_LEFT"
+                       layoutX="8.0" layoutY="31.0" prefHeight="207.0" prefWidth="190.0"
+                       promptText="Почніть вводити текст..."
+                       AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
          </children>
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane id="right-panel" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="40.0" left="5.0" right="40.0" top="40.0" />
          </BorderPane.margin>
@@ -44,20 +53,29 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
          <children>
-             <ComboBox fx:id="transactionTypeBox" layoutX="44.0" layoutY="153.0" prefHeight="34.0" prefWidth="226.0" promptText="Виберіть тип транзакції">
-             </ComboBox>
-            <Button fx:id="addTransactionButton" alignment="CENTER" layoutX="86.0" layoutY="117.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="144.0" text="Додати транзакцію" textAlignment="CENTER">
+            <ComboBox id="transaction-type" fx:id="transactionTypeBox"
+                      layoutX="44.0" layoutY="153.0" prefHeight="34.0" prefWidth="226.0"
+                      promptText="Виберіть тип транзакції">
+            </ComboBox>
+            <Button id="add-transaction-btn" fx:id="addTransactionButton"
+                    alignment="CENTER" layoutX="86.0" layoutY="117.0"
+                    mnemonicParsing="false" prefHeight="26.0" prefWidth="144.0"
+                    text="Додати транзакцію" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="closeTransactionMenu" alignment="CENTER" layoutX="86.0" layoutY="85.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="26.0" prefWidth="144.0" text="Згорнути дане меню" textAlignment="CENTER">
+            <Button id="close-transaction-btn" fx:id="closeTransactionMenu"
+                    alignment="CENTER" layoutX="86.0" layoutY="85.0"
+                    mnemonicParsing="false" onAction="#closeWindow"
+                    prefHeight="26.0" prefWidth="144.0"
+                    text="Згорнути дане меню" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-
          </children>
       </AnchorPane>
    </center>
 </BorderPane>
+

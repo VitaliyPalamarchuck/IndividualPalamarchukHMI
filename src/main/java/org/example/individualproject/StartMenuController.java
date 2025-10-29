@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.stage.Stage;
 
 public class StartMenuController {
@@ -16,7 +17,7 @@ public class StartMenuController {
     public Button goMainMenu;
 
 
-    public void goMainMenuAction(ActionEvent actionEvent) {
+    /*public void goMainMenuAction(ActionEvent actionEvent) {
         try {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
@@ -28,13 +29,17 @@ public class StartMenuController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public void goMainMenuAction1(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setContentText("Дана програма знаходиться в розробці і далеко не весь функціонал працює.\nБажаєте продовжити?");
         alert.setTitle("Попередження");
         alert.setHeaderText("Увага!");
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("/styles/AlertStyles.css").toExternalForm());
+
+        alert.getButtonTypes().setAll(ButtonType.OK, ButtonType.CANCEL);
 
         ButtonType choice = alert.showAndWait().get();
 
@@ -52,6 +57,5 @@ public class StartMenuController {
             Stage stage = (Stage) goMainMenu.getScene().getWindow();
             stage.close();
         }
-
     }
 }

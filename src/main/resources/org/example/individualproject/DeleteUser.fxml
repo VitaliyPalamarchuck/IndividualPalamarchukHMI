@@ -9,33 +9,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="146.0" prefWidth="146.0"
+<AnchorPane id="delete-container" prefHeight="200.0" prefWidth="160.0"
+            stylesheets="@../../../styles/deleteuser.css"
             xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.individualproject.DeleteUserController">
 
-    <VBox alignment="CENTER" spacing="10">
-        <Label alignment="CENTER" text="Видалення користувача" textAlignment="CENTER">
+    <VBox id="delete-box" alignment="CENTER" spacing="5">
+        <Label id="delete-title" text="Видалення користувача" />
+
+        <TextField id="username-field" promptText="Логін">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" top="5.0" />
+                <Insets bottom="5.0" />
             </VBox.margin>
-            <font>
-                <Font name="System Bold" size="12.0" />
-            </font></Label>
-        <TextField promptText="Логін">
+        </TextField>
+
+        <PasswordField id="password-field" promptText="Пароль">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></TextField>
-        <PasswordField promptText="Пароль">
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </PasswordField>
+
+        <PasswordField id="confirm-password-field" promptText="Підтвердіть пароль">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></PasswordField>
-        <TextField promptText="Підтвердіть пароль">
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </PasswordField>
+
+        <Button id="delete-button" text="Видалити">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></TextField>
-        <Button text="Видалити">
-            <VBox.margin>
-                <Insets bottom="10.0" left="15.0" right="10.0" />
-            </VBox.margin></Button>
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </Button>
     </VBox>
 </AnchorPane>

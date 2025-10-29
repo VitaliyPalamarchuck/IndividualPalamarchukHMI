@@ -9,37 +9,42 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="170.0" prefWidth="175.0"
+<AnchorPane id="register-container" prefHeight="250.0" prefWidth="160.0"
+            stylesheets="@../../../styles/register.css"
             xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.individualproject.RegisterController">
 
-    <VBox alignment="CENTER" spacing="10">
-        <Label alignment="CENTER" text="Реєстрація" textAlignment="CENTER">
+    <VBox id="register-box" alignment="CENTER" spacing="5">
+        <Label id="register-title" text="Реєстрація" />
+
+        <TextField id="username-field" promptText="Логін">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" top="5.0" />
+                <Insets bottom="5.0" />
             </VBox.margin>
-            <font>
-                <Font name="System Bold" size="33.0" />
-            </font></Label>
-        <TextField promptText="Логін">
+        </TextField>
+
+        <PasswordField id="password-field" promptText="Пароль">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></TextField>
-        <PasswordField promptText="Пароль">
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </PasswordField>
+
+        <TextField id="name-field" promptText="Ваше ім'я">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></PasswordField>
-        <TextField promptText="Ваше ім'я">
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </TextField>
+
+        <TextField id="limit-field" promptText="Введіть ліміт">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></TextField>
-        <TextField promptText="Введіть ліміт">
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </TextField>
+
+        <Button id="register-button" text="Зареєструвати">
             <VBox.margin>
-                <Insets left="15.0" right="10.0" />
-            </VBox.margin></TextField>
-        <Button text="Зареєструвати">
-            <VBox.margin>
-                <Insets bottom="10.0" left="15.0" right="10.0" />
-            </VBox.margin></Button>
+                <Insets bottom="5.0" />
+            </VBox.margin>
+        </Button>
     </VBox>
 </AnchorPane>

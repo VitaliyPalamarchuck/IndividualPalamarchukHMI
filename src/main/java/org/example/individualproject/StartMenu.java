@@ -3,6 +3,7 @@ package org.example.individualproject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,7 +18,8 @@ public class StartMenu extends Application {
         stage.setResizable(false);
         String cssResource = getClass().getResource("/styles/startmenu.css").toExternalForm();
         scene.getStylesheets().add(cssResource);
-
+        Image icon = new Image(getClass().getResource("/images/logo.png").toExternalForm());
+        stage.getIcons().add(icon);
         stage.setTitle("Finance Application");
         stage.setScene(scene);
         stage.show();

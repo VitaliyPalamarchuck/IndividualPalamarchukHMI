@@ -1,0 +1,146 @@
+/* Загальні стилі */
+.root {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #2E339C, #100D21);
+}
+
+/* Стилі для меню */
+#menu-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-min-height: 25;
+    -fx-max-width: Infinity;
+    -fx-alignment: CENTER;
+}
+
+#menu-button-secondary {
+    -fx-background-color: #3f4287;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-min-height: 25;
+    -fx-max-width: Infinity;
+    -fx-alignment: CENTER;
+}
+
+#menu-container {
+    -fx-spacing: 5;
+    -fx-padding: 5;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10;
+}
+
+#menu-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+}
+
+#menu-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+#news-panel {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 15;
+    -fx-padding: 20;
+}
+
+#content-area {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+}
+
+#news-title {
+    -fx-text-fill: white;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+}
+
+.sub-menu-container {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+.sub-menu-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-padding: 0 0 5 0;
+}
+
+.input-label {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 0 2 0;
+}
+
+.text-input {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 5;
+    -fx-padding: 5 8;
+    -fx-font-size: 12px;
+}
+
+.combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 5;
+    -fx-font-size: 12px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2E339C;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #4CAF50;
+}
+
+.action-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-min-height: 25;
+}
+
+.action-button:hover {
+    -fx-background-color: #45a049;
+}
+
+.cancel-button {
+    -fx-background-color: #3f4287;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-min-height: 25;
+}
+
+.cancel-button:hover {
+    -fx-background-color: #363972;
+}

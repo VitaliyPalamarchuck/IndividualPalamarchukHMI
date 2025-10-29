@@ -1,4 +1,7 @@
-#backgroundStartMenu{
+/*#backgroundStartMenu{*/
+/*    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #2E339C, #100D21);*/
+/*}*/
+.root{
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #2E339C, #100D21);
 }
 #text-labels{
@@ -14,3 +17,5 @@
 #goButton:hover {
     -fx-background-color: #45a049;
 }
+
+
