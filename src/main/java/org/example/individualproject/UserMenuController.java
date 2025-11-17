@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -15,6 +16,9 @@ import java.io.IOException;
 public class UserMenuController {
     @FXML
     public AnchorPane ReportAndTransactionPane;
+
+    @FXML
+    private Label sayHelloLabel;
 
     @FXML
     private Button addTransaction;
@@ -33,6 +37,10 @@ public class UserMenuController {
 
     @FXML
     private Button setLimitButton;
+
+    public void sayHello(String name){
+        sayHelloLabel.setText("Вітаю "+name +" !");
+    }
 
     @FXML
     void backToMainMenu(ActionEvent event) {

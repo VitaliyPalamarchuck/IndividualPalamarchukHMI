@@ -11,33 +11,33 @@
 
 <AnchorPane id="login-container" prefHeight="200.0" prefWidth="160.0"
             stylesheets="@../../../styles/login.css"
-            xmlns="http://javafx.com/javafx/24.0.1" 
-            xmlns:fx="http://javafx.com/fxml/1" 
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.example.individualproject.LoginController">
 
     <VBox id="login-box" alignment="CENTER" spacing="10">
         <Label id="login-title" alignment="CENTER" text="Вхід" textAlignment="CENTER">
-         <VBox.margin>
-            <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
-         </VBox.margin>
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
+            <VBox.margin>
+                <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
+            </VBox.margin>
+            <font>
+                <Font name="System Bold" size="33.0" />
+            </font>
         </Label>
         <TextField id="login-field" fx:id="loginField" promptText="Логін">
-         <VBox.margin>
-            <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
-         </VBox.margin>
+            <VBox.margin>
+                <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
+            </VBox.margin>
         </TextField>
         <PasswordField id="password-field" fx:id="passField" promptText="Пароль">
-         <VBox.margin>
-            <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
-         </VBox.margin>
+            <VBox.margin>
+                <Insets bottom="10.0" left="15.0" right="10.0" top="5.0" />
+            </VBox.margin>
         </PasswordField>
         <Button id="login-button" fx:id="enterAccount" onAction="#enterAccount" text="Увійти">
-         <VBox.margin>
-             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </VBox.margin>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </VBox.margin>
         </Button>
     </VBox>
 </AnchorPane>

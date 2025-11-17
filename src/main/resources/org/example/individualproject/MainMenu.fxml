@@ -6,62 +6,45 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<HBox prefHeight="500.0" prefWidth="900.0"
-      xmlns="http://javafx.com/javafx/21.0.2" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.example.individualproject.MainMenuController"
-      stylesheets="@../../../styles/mainmenu.css">
-   <children>
-      <VBox maxWidth="200.0" minWidth="180.0" prefHeight="500.0" prefWidth="180.0" id="menu-container" HBox.hgrow="NEVER">
+<HBox prefHeight="500.0" prefWidth="900.0" stylesheets="@../../../styles/application.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.MainMenuController">
+<children>
+      <VBox id="menu-container" maxWidth="200.0" minWidth="180.0" prefHeight="500.0" prefWidth="180.0" HBox.hgrow="NEVER">
          <HBox.margin>
-            <Insets left="5.0"/>
+            <Insets left="5.0" />
          </HBox.margin>
          <children>
-            <AnchorPane fx:id="mainPane" maxHeight="220.0" minHeight="220.0" prefHeight="220.0" prefWidth="180.0" id="menu-panel">
+            <AnchorPane id="menu-panel" fx:id="mainPane" maxHeight="220.0" minHeight="220.0" prefHeight="220.0" prefWidth="180.0">
                <children>
-                  <VBox spacing="5" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0">
-                     <Label alignment="CENTER" prefHeight="25.0" maxWidth="140.0" 
-                            text="Головне Меню" id="menu-title"/>
-                     <Button fx:id="loginButton" id="menu-button" alignment="CENTER"
-                             mnemonicParsing="false" onAction="#showLoginMenu" 
-                             text="Вхід" textAlignment="CENTER" />
-                     <Button fx:id="registerButton" id="menu-button" alignment="CENTER"
-                             mnemonicParsing="false" onAction="#showRegisterMenu" 
-                             text="Реєстрація" textAlignment="CENTER" />
-                     <Button fx:id="deleteButton" id="menu-button-secondary" alignment="CENTER"
-                             mnemonicParsing="false" onAction="#showDeleteMenu" 
-                             text="Видалити користувача" textAlignment="CENTER" wrapText="true" />
-                     <Button fx:id="exitButton" id="menu-button-secondary" alignment="CENTER"
-                             mnemonicParsing="false" onAction="#closeProgram" 
-                             text="Завершити роботу" textAlignment="CENTER" wrapText="true" />
+                  <VBox layoutY="13.0" prefHeight="194.0" prefWidth="173.0" spacing="5" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-0.5999999999999659" AnchorPane.topAnchor="13.0">
+                     <Label id="menu-title" alignment="CENTER" maxWidth="140.0" prefHeight="25.0" text="Головне Меню" />
+                     <Button id="menu-button" fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#showLoginMenu" text="Вхід" textAlignment="CENTER" />
+                     <Button id="menu-button" fx:id="registerButton" alignment="CENTER" mnemonicParsing="false" onAction="#showRegisterMenu" text="Реєстрація" textAlignment="CENTER" />
+                     <Button id="menu-button-secondary" fx:id="deleteButton" alignment="CENTER" maxHeight="28.0" mnemonicParsing="false" onAction="#showDeleteMenu" prefHeight="28.0" prefWidth="132.0" text="Видалити користувача" textAlignment="CENTER" wrapText="true" />
+                     <Button id="menu-button-secondary" fx:id="exitButton" alignment="CENTER" mnemonicParsing="false" onAction="#closeProgram" text="Завершити роботу" textAlignment="CENTER" wrapText="true" />
                   </VBox>
                </children>
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </AnchorPane>
-            <AnchorPane fx:id="contentPane" minHeight="220.0" prefWidth="180.0" 
-                        id="content-panel" VBox.vgrow="ALWAYS">
+            <AnchorPane id="content-panel" fx:id="contentPane" minHeight="220.0" prefWidth="180.0" VBox.vgrow="ALWAYS">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" top="5.0"/>
+                  <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </AnchorPane>
          </children>
       </VBox>
-      <AnchorPane minWidth="500.0" prefHeight="500.0" prefWidth="686.0" id="news-panel" HBox.hgrow="ALWAYS">
+      <AnchorPane id="news-panel" minWidth="500.0" prefHeight="500.0" prefWidth="686.0" HBox.hgrow="ALWAYS">
          <children>
-            <AnchorPane layoutX="52.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0" 
-                        id="content-area" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="52.0" 
-                        AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="50.0">
+            <AnchorPane id="content-area" layoutX="52.0" layoutY="50.0" prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="52.0" AnchorPane.topAnchor="50.0">
                <children>
-                  <Label alignment="CENTER" id="news-title" prefHeight="53.0" prefWidth="576.0" 
-                         text="НОВИНИ" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+                  <Label id="news-title" alignment="CENTER" prefHeight="53.0" prefWidth="576.0" text="НОВИНИ" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>
             </AnchorPane>
          </children>
          <HBox.margin>
-            <Insets left="10.0" right="5.0"/>
+            <Insets left="10.0" right="5.0" />
          </HBox.margin>
       </AnchorPane>
    </children>

@@ -28,6 +28,8 @@ public class LoginController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("UserMenu.fxml"));
             Parent root = loader.load();
+            UserMenuController userMenuController= loader.getController();
+            userMenuController.sayHello(loginField.getText());
             Stage stage = (Stage) enterAccount.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -36,5 +38,7 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+
 
 }
