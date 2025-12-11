@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,10 +26,11 @@ public class MainMenuController {
     private Button registerButton;
 
     @FXML
-    private AnchorPane contentPane;
+    private StackPane contentPane; // Змінено на StackPane
 
     @FXML
     private AnchorPane mainPane;
+
     @FXML
     void closeProgram(ActionEvent event) {
         Stage stage = (Stage) exitButton.getScene().getWindow();
@@ -51,11 +53,11 @@ public class MainMenuController {
     }
 
     private void loadView(String fxmlFile) {
-    try {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource(fxmlFile));
-        contentPane.getChildren().setAll(pane);
-    } catch (IOException e) {
-        e.printStackTrace();
+        try {
+            Node view = FXMLLoader.load(getClass().getResource(fxmlFile));
+            contentPane.getChildren().setAll(view);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-}
 }

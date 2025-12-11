@@ -8,39 +8,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="register-container" prefHeight="250.0" prefWidth="160.0" stylesheets="@../../../styles/application.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.RegisterController">
+<AnchorPane id="register-container" prefHeight="320.0" prefWidth="160.0" stylesheets="@../../../styles/application.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.RegisterController">
 
-    <VBox id="register-box" alignment="CENTER" prefHeight="194.0" prefWidth="160.0" spacing="5">
+    <VBox id="register-box" alignment="CENTER" spacing="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+        </padding>
         <Label id="register-title" text="Реєстрація" />
 
-        <TextField id="username-field" promptText="Логін">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </TextField>
+        <TextField fx:id="usernameField" id="username-field" promptText="Логін" />
 
-        <PasswordField id="password-field" promptText="Пароль">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </PasswordField>
+        <PasswordField fx:id="passwordField" id="password-field" promptText="Пароль" />
 
-        <TextField id="name-field" promptText="Ваше ім'я">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </TextField>
+        <TextField fx:id="nameField" id="name-field" promptText="Ваше ім'я" />
 
-        <TextField id="limit-field" promptText="Введіть ліміт">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </TextField>
+        <TextField fx:id="balanceField" id="limit-field" promptText="Початковий баланс, грн" />
 
-        <Button id="register-button" text="Зареєструвати">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </Button>
+        <PasswordField fx:id="secretWordField" id="password-field" promptText="Секретне слово" />
+
+        <Button fx:id="registerButton" id="register-button" onAction="#registerUser" text="Зареєструвати" />
     </VBox>
 </AnchorPane>

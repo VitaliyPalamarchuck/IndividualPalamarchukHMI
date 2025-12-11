@@ -4,6 +4,40 @@
     -fx-padding: 12;
 }
 
+/* === Вітальна панель === */
+#welcome-panel {
+    -fx-padding: 20px;
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 15;
+}
+
+#welcome-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+
+#welcome-subtitle {
+    -fx-font-size: 16px;
+    -fx-text-fill: #E0E0E0;
+    -fx-opacity: 0.9;
+}
+
+.feature-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #BDBDBD;
+    -fx-line-spacing: 5px;
+}
+
+#welcome-cta {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-text-fill: #4CAF50;
+    -fx-padding: 15px 0 0 0;
+}
+
+
 /* === Контейнери стандартні === */
 #login-container,
 #delete-container,
@@ -20,17 +54,27 @@
     -fx-max-width: 240px;
 }
 
+#login-box .text-field,
+#login-box .password-field,
+#login-box .button,
+#register-box .text-field,
+#register-box .password-field,
+#register-box .button {
+    -fx-pref-width: 140px;
+    -fx-max-width: 140px;
+}
+
+
 /* === Меню === */
 #menu-container {
     -fx-spacing: 5;
     -fx-padding: 5;
-    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-color: transparent; /* Робимо прозорим, щоб glass-pane був видимим */
     -fx-background-radius: 10;
 }
 
-#menu-panel {
-    -fx-background-color: rgba(255, 255, 255, 0.1);
-    -fx-background-radius: 10;
+#menu-panel-inner { /* Новий ID для внутрішнього VBox */
+    -fx-background-color: transparent; /* Робимо прозорим */
     -fx-padding: 5;
 }
 
@@ -83,13 +127,19 @@
     -fx-font-size: 10px;
 }
 
+#transaction-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
 #news-title {
     -fx-font-size: 28px;
     -fx-font-style: italic;
 }
 
-/* === Текстові поля === */
+/* === Текстові поля та TextArea === */
 .text-field,
+.text-area,
 .input-field,
 #login-field,
 #password-field,
@@ -109,6 +159,39 @@
     -fx-pref-height: 32px;
     -fx-pref-width: 140px;
     -fx-max-width: 140px;
+}
+
+.text-area {
+    -fx-wrap-text: true;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane .content {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-bar:vertical,
+.text-area .scroll-bar:horizontal {
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-radius: 5;
+}
+
+.text-area .scroll-bar .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 5;
+}
+
+
+#transaction-goal-input {
+    -fx-pref-height: 207px;
+    -fx-alignment: top-left;
 }
 
 /* === Кнопки === */
@@ -137,6 +220,11 @@
     -fx-wrap-text: true;
     -fx-alignment: center;
 }
+
+#close-transaction-btn {
+    -fx-font-size: 11px;
+}
+
 .button,
 #menu-button,
 #menu-button-secondary,
@@ -198,7 +286,6 @@
 /* === Випадаючі списки === */
 .combo-box {
     -fx-background-color: rgba(255, 255, 255, 0.15);
-    -fx-text-fill: white;
     -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
     -fx-background-radius: 5;
     -fx-font-size: 12px;
@@ -220,12 +307,118 @@
     -fx-background-color: #4CAF50;
 }
 
+/* Стилі для комірок ComboBox */
+.income-cell {
+    -fx-background-color: #2E7D32; /* темно-зелений */
+}
+.income-cell .text {
+    -fx-fill: white;
+}
+
+.expense-cell {
+    -fx-background-color: #C62828; /* темно-червоний */
+}
+.expense-cell .text {
+    -fx-fill: white;
+}
+
+/* === DatePicker === */
+.date-picker {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 5;
+}
+.date-picker .text-field {
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+}
+.date-picker .arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+    -fx-background-radius: 0 5 5 0;
+}
+.date-picker-popup {
+    -fx-background-color: rgba(16, 13, 33, 0.8);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 10);
+}
+.date-picker-popup .month-year-pane {
+    -fx-background-color: transparent;
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: white;
+}
+.date-picker-popup .spinner .label {
+    -fx-text-fill: white;
+}
+.date-picker-popup .spinner .arrow-button {
+    -fx-padding: 1 4 1 4;
+    -fx-pref-width: 20;
+    -fx-max-width: 20;
+}
+.date-picker-popup .spinner .arrow-button .arrow {
+    -fx-padding: 4;
+}
+.date-picker-popup .day-cell {
+    -fx-text-fill: black;
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-border-color: rgba(0, 0, 0, 0.1);
+    -fx-border-width: 0 0 1px 1px;
+}
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(76, 175, 80, 0.7);
+    -fx-text-fill: white;
+}
+.date-picker-popup .day-cell.today {
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 1px;
+}
+.date-picker-popup .day-cell.selected {
+    -fx-background-color: rgba(63, 66, 135, 0.8);
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.date-picker-popup .week-number-cell {
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+}
+
+
 /* === TableView === */
 .table-view {
     -fx-background-color: transparent;
     -fx-padding: 5;
     -fx-border-insets: 0;
 }
+.table-view .column-header-background {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.table-view .table-cell {
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255, 255, 255, 0.1);
+    -fx-border-width: 0 0 1 0;
+}
+.table-row-cell {
+    -fx-background-color: transparent;
+}
+.table-row-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.03);
+}
+.table-row-cell:hover {
+    -fx-background-color: rgba(76, 175, 80, 0.3);
+}
+.income-row .table-cell {
+    -fx-text-fill: #81C784;
+}
+.expense-row .table-cell {
+    -fx-text-fill: #E57373;
+}
+
 
 /* === Popup / Dialog === */
 .popup-panel,
@@ -299,6 +492,7 @@
 .vbox-container {
     -fx-spacing: 10;
     -fx-alignment: center;
+    -fx-max-width: 100%;
 }
 
 /* Заголовок меню */
@@ -408,4 +602,45 @@
 
 #save-limit-button:hover {
     -fx-background-color: #45a049;
+}
+
+.glass-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
+}
+
+/* Стилі для огляду за місяць */
+.monthly-overview-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 5px 0;
+}
+
+.monthly-summary-item {
+    -fx-background-color: rgba(255, 255, 255, 0.05); /* Легкий фон */
+    -fx-background-radius: 5;
+    -fx-padding: 5px;
+    -fx-spacing: 2px;
+    -fx-border-color: rgba(255, 255, 255, 0.1); /* Легка рамка */
+    -fx-border-radius: 5;
+    -fx-border-width: 1px;
+    -fx-margin-bottom: 10px; /* Додаємо відступ знизу */
+}
+
+.monthly-income-label {
+    -fx-text-fill: #81C784; /* Світло-зелений */
+    -fx-font-size: 12px;
+}
+
+.monthly-expenses-label {
+    -fx-text-fill: #E57373; /* Світло-червоний */
+    -fx-font-size: 12px;
+}
+
+.monthly-net-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 11px; /* Зменшено розмір шрифту */
 }

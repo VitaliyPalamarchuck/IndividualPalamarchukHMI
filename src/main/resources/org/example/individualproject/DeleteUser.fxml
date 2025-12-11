@@ -5,36 +5,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="delete-container" prefHeight="200.0" prefWidth="160.0" stylesheets="@../../../styles/application.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.DeleteUserController">
+<VBox alignment="CENTER" spacing="10" styleClass="glass-pane" stylesheets="@../../../styles/application.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.DeleteUserController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" text="Видалення акаунту" />
+    <Label style="-fx-text-fill: #E57373;" text="Увага! Ця дія незворотня." />
 
-    <VBox id="delete-box" alignment="CENTER" prefHeight="155.0" prefWidth="160.0" spacing="5">
-        <Label id="delete-title" text="Видалення користувача" />
+    <TextField fx:id="usernameField" promptText="Ваш логін" />
+    <PasswordField fx:id="passwordField" promptText="Ваш пароль" />
+    <PasswordField fx:id="secretWordField" promptText="Секретне слово" />
 
-        <TextField id="username-field" promptText="Логін">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </TextField>
-
-        <PasswordField id="password-field" promptText="Пароль">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </PasswordField>
-
-        <PasswordField id="confirm-password-field" promptText="Підтвердіть пароль">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </PasswordField>
-
-        <Button id="delete-button" text="Видалити">
-            <VBox.margin>
-                <Insets bottom="5.0" />
-            </VBox.margin>
-        </Button>
-    </VBox>
-</AnchorPane>
+    <Button fx:id="deleteButton" onAction="#deleteUser" style="-fx-background-color: #C62828;" text="Видалити назавжди" />
+</VBox>

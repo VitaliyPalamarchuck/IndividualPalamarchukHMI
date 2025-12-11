@@ -13,14 +13,16 @@ public class StartMenu extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(StartMenu.class.getResource("StartMenu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setMinHeight(350);
-        stage.setMinWidth(550);
+
+        stage.setTitle("FinanceManager"); // Змінено тут
         stage.setResizable(false);
-        String cssResource = getClass().getResource("/styles/startmenu.css").toExternalForm();
-        scene.getStylesheets().add(cssResource);
-        Image icon = new Image(getClass().getResource("/images/logo.png").toExternalForm());
-        stage.getIcons().add(icon);
-        stage.setTitle("Finance Application");
+
+        try {
+            stage.getIcons().add(new Image(StartMenu.class.getResourceAsStream("/images/logo.png")));
+        } catch (Exception e) {
+            System.out.println("Іконка не знайдена. Переконайтесь, що /images/logo.png існує.");
+        }
+        
         stage.setScene(scene);
         stage.show();
     }

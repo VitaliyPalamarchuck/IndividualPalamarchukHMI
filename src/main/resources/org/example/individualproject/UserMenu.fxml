@@ -11,32 +11,60 @@
 <HBox maxHeight="500.0" maxWidth="900.0" prefHeight="500.0" prefWidth="900.0" stylesheets="@../../../styles/application.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.individualproject.UserMenuController">
 
     <!-- Меню -->
-    <VBox id="menu-container" maxWidth="200.0" minWidth="180.0" prefWidth="180.0" spacing="10.0">
+    <VBox id="menu-container" maxWidth="200.0" minWidth="180.0" prefHeight="500.0" prefWidth="180.0" HBox.hgrow="NEVER">
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin>
+         <children>
+            <AnchorPane fx:id="buttonPaneUser" maxWidth="523.0" minHeight="219.0" minWidth="165.0" prefHeight="240.0" prefWidth="170.0" styleClass="glass-pane">
+               <children>
+                  <VBox id="menu-panel-inner" alignment="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="210.0" prefWidth="160.0" spacing="5.0">
 
-        <AnchorPane fx:id="buttonPaneUser" maxWidth="523.0" minHeight="219.0" minWidth="165.0" prefHeight="219.0" prefWidth="170.0">
-            <VBox id="menu-panel" layoutX="5.0" layoutY="14.0" prefHeight="169.0" prefWidth="160.0" spacing="5.0">
+                     <Label id="menu-title" fx:id="sayHelloLabel" alignment="CENTER" prefHeight="20.0" prefWidth="150.0" />
 
-                <Label id="menu-title" fx:id="sayHelloLabel" alignment="CENTER" prefHeight="20.0" prefWidth="150.0" />
+                     <Label styleClass="balance-label-title" text="Ваш поточний баланс:" />
+                     <Label fx:id="balanceLabel" alignment="CENTER" prefHeight="30.0" prefWidth="150.0" styleClass="balance-label" text="0.00 грн" />
 
-                <Button id="menu-button" fx:id="addTransaction" onAction="#openTransactionAndReportWindow" text="Додати транзакцію" />
-                <Button id="menu-button" fx:id="reportCreateButton" onAction="#openReportWindow" text="Сформувати звіт" />
-                <Button id="menu-button" fx:id="setLimitButton" onAction="#setLimit" text="Встановити ліміт" />
-                <Button id="menu-button-secondary" fx:id="backToMainMenu" onAction="#backToMainMenu" text="Назад в головне меню">
-                    <font>
-                        <Font size="8.0" />
-                    </font>
-                </Button>
+                     <Button id="menu-button" fx:id="addTransaction" onAction="#openTransactionAndReportWindow" text="Додати транзакцію" />
+                     <Button id="menu-button" fx:id="reportCreateButton" onAction="#openReportWindow" text="Сформувати звіт" />
+                     <Button id="settings-button" fx:id="settingsButton" onAction="#openSettings" text="Налаштування" />
+                     <Button id="menu-button-secondary" fx:id="backToMainMenu" onAction="#backToMainMenu" text="Назад в головне меню">
+                        <font>
+                           <Font size="8.0" />
+                        </font>
+                     </Button>
+                  </VBox>
+               </children>
+            </AnchorPane>
+
+            <VBox id="content-panel" fx:id="contentPaneUser" minHeight="220.0" prefWidth="180.0" styleClass="glass-pane" VBox.vgrow="ALWAYS">
+                <children>
+                    <Label styleClass="monthly-overview-title" text="Огляд за місяць" />
+                    <VBox styleClass="monthly-summary-item">
+                        <Label fx:id="monthlyIncomeLabel" styleClass="monthly-income-label" text="Дохід: 0.00 грн" wrapText="true" />
+                    </VBox>
+                    <VBox styleClass="monthly-summary-item">
+                        <Label fx:id="monthlyExpensesLabel" styleClass="monthly-expenses-label" text="Витрати: 0.00 грн" wrapText="true" />
+                    </VBox>
+                    <VBox styleClass="monthly-summary-item">
+                        <Label fx:id="monthlyNetLabel" styleClass="monthly-net-label" text="Чистий дохід: 0.00 грн" wrapText="true" />
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                </padding>
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
             </VBox>
-        </AnchorPane>
+         </children>
+      </VBox>
 
-        <AnchorPane id="content-panel" fx:id="contentPaneUser" minWidth="180.0" prefWidth="180.0" />
-    </VBox>
-
-    <!-- Main Content з відступом від меню -->
-    <AnchorPane id="main-content" fx:id="ReportAndTransactionPane" minWidth="500.0" prefHeight="500.0" prefWidth="686.0" style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 10; -fx-padding: 15;">
-        <HBox.margin>
+      <!-- Main Content з відступом від меню -->
+      <AnchorPane id="main-content" fx:id="ReportAndTransactionPane" minWidth="500.0" prefHeight="500.0" prefWidth="686.0" style="-fx-background-color: rgba(255,255,255,0.1); -fx-background-radius: 10; -fx-padding: 15;">
+         <HBox.margin>
             <Insets left="15.0" /> <!-- Відступ від меню -->
-        </HBox.margin>
-    </AnchorPane>
+         </HBox.margin>
+      </AnchorPane>
 
 </HBox>
